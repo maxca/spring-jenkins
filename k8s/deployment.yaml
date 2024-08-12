@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-service
+  labels:
+    app: app-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-service
+  template:
+    metadata:
+      labels:
+        app: app-service
+    spec:
+      containers:
+      - name: app-service
+        image: maxca789/app-service:latest
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
