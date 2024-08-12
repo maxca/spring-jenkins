@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: app-service
+        version: 1.0.0
     spec:
       containers:
       - name: app-service
