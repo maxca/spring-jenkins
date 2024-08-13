@@ -1,5 +1,5 @@
 # Use an official OpenJDK runtime as a parent image
-FROM openjdk:24-slim
+FROM openjdk:23-rc-jdk-slim
 
 # Set the working directory inside the container
 WORKDIR /app
