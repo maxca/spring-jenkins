@@ -13,11 +13,11 @@ spec:
     metadata:
       labels:
         app: app-service
-        version: ${IMAGE_TAG}
+        version: $IMAGE_TAG
     spec:
       containers:
       - name: app-service
-        image: maxca789/app-service:${IMAGE_TAG}
+        image: maxca789/app-service:$IMAGE_TAG
         ports:
         - containerPort: 8081
         resources:
